@@ -131,7 +131,7 @@ static const char *read_header_and_symbols(IGenericFst &fst, FILE *stream) {
     int64_t start = read_int64_LE(stream);
     int64_t nstates = read_int64_LE(stream);
     if(nstates < 0)
-        return false;   // to prevent creating 2^31 nodes in case of sudden EOF
+        return nullptr;   // to prevent creating 2^31 nodes in case of sudden EOF
     fst.clear();
     for(int i = 0; i < nstates; i++)
         fst.newState();

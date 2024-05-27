@@ -26,7 +26,7 @@
 
 import os
 
-print "Currently supported OS version: Ubuntu 10.04"
+print("Currently supported OS version: Ubuntu 10.04")
 
 EnsureSConsVersion(0,97)
 from SCons.Script import *
@@ -89,11 +89,11 @@ Help(opts.GenerateHelpText(env))
 
 if 0:
     if "-DUNSAFE" in env["opt"]:
-        print "WARNING: do not compile with -DUNSAFE except for benchmarking or profiling"
+        print("WARNING: do not compile with -DUNSAFE except for benchmarking or profiling")
     if re.search(r'-O[234]',env["opt"]):
-        print "NOTE: compile with high optimization only for production use"
+        print("NOTE: compile with high optimization only for production use")
     else:
-        print "NOTE: compiling for development (slower but safer)"
+        print("NOTE: compiling for development (slower but safer)")
 
 ################################################################
 ### libraries
@@ -225,7 +225,7 @@ if env["test"]:
     for cmd in Glob("*/test-*.cc")+Glob("*/test*/test-*.cc"):
         cmd = str(cmd)
         penv.Program(cmd)
-        print cmd
+        print(cmd)
         cmd = re.sub('.cc$','',cmd)
         penv.Test(cmd)
 
