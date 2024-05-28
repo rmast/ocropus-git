@@ -1,6 +1,6 @@
 ##Version 0.44+
 ## compile on ubuntu Ubuntu 20.04 Mint 20.3
-# First install iulib-version that provides components.h
+# First install iulib-version that provides components.h, like https://github.com/rmast/iulib
 
 sudo bash ubuntu-packages
 scons
