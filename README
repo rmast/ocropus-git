@@ -87,3 +87,65 @@ IUPR is a part of DFKI:
 
 hOCR Output Format:
     http://docs.google.com/View?docid=dfxcv4vc_67g844kf
+
+--------------------------------------------------------------------------------
+
+How do I use OCRopus?
+
+I want it to OCR a PNG file into an HTML file saving the layout.
+
+
+    go to your directory of appropriately named book page scan images (tiff or png). When you type ls, you should see the pages list in order! Then, try:
+
+    ocropus book2pages out image*
+
+    This grooms the pages for OCR. Next, let’s make the page objects, and eventually the book:
+
+    ocropus pages2lines out
+
+    ocropus lines2fsts out/
+
+    ocropus fsts2text out/
+
+    ocropus buildhtml out/ > book.html
+
+    That should create you a nice book html file, in the hOCR format.
+
+Resulting directory structure:
+out
+0001  0001.bin.png  0001.png  0001.pseg.png
+out/0001
+010001.cseg.png
+010001.fst
+010001.png
+010001.rseg.png
+010001.txt
+010002.cseg.png
+010002.fst
+010002.png
+010002.rseg.png
+010002.txt
+...
+
+Resulting hocr with no coordinates:
+
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN
+   http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta name="ocr-capabilities" content="ocr_line ocr_page" />
+<meta name="ocr-langs" content="en" />
+<meta name="ocr-scripts" content="Latn" />
+<meta name="ocr-microformats" content="" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><title>OCR Output</title>
+</head>
+<body>
+<div class="ocr_page">
+<span class="ocr_line">
+first scanned word</span><span class="ocr_line">
+
+
+
+
+
