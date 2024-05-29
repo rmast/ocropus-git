@@ -26,7 +26,17 @@
 
 import os
 
-print("Currently supported OS version: Ubuntu 10.04")
+import os
+import multiprocessing
+
+SetOption('warn', 'no-duplicate-environment')
+
+# Options to improve the default speed of SCons
+SetOption('max_drift', 2)
+SetOption('implicit_cache', 1)
+SetOption('num_jobs', multiprocessing.cpu_count())
+
+print("Currently supported OS version: Ubuntu 20.04")
 
 EnsureSConsVersion(0,97)
 from SCons.Script import *
