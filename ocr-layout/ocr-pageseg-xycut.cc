@@ -370,7 +370,7 @@ namespace ocropus {
     
     
     void SegmentPageByXYCUTS::segment(intarray &image,bytearray &in) {
-        if(!contains_only(in,byte(0),byte(255))){
+        if(!contains_only(in,narray_byte(0),narray_byte(255))){
             fprintf(stderr,"X-Y Cut algorithm needs binary input image.\n");
 			return;
             //exit(1);

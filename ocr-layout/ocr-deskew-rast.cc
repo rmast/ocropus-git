@@ -47,7 +47,7 @@ namespace ocropus {
         bytearray binarized;
         makelike(binarized, in);
         autodel<IBinarize> binarizer(make_BinarizeBySauvola());
-        if(contains_only(in, byte(0), byte(255))) {
+        if(contains_only(in, narray_byte(0), narray_byte(255))) {
             copy(binarized, in);
         } else {
             binarizer->binarize(binarized,in);
@@ -96,7 +96,7 @@ namespace ocropus {
         float angle = (float) getSkewAngle(in);
         float cx = image.dim(0)/2.0;
         float cy = image.dim(1)/2.0;
-        if(contains_only(in, byte(0), byte(255)))
+        if(contains_only(in, narray_byte(0), narray_byte(255)))
             rotate_direct_sample(image, in, angle, cx, cy);
         else
             rotate_direct_interpolate(image, in, angle, cx, cy);

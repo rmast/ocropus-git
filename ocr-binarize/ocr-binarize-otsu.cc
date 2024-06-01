@@ -59,7 +59,7 @@ namespace ocropus {
             if(bin_image.length1d()!=gray_image.length1d())
                 makelike(bin_image,gray_image);
 
-            if(contains_only(gray_image,byte(0),byte(255))){
+            if(contains_only(gray_image,narray_byte(0),narray_byte(255))){
                 copy(bin_image,gray_image);
                 return ;
             }

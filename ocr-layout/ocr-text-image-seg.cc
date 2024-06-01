@@ -125,14 +125,14 @@ namespace ocropus {
         //       of the above categories
 
 
-        byte red = byte(255*(max(prob_map(index,text),
+        narray_byte red = narray_byte(255*(max(prob_map(index,text),
                                  prob_map(index,table))));
 
-        byte green = byte(255*(max(prob_map(index,halftone),
+        narray_byte green = narray_byte(255*(max(prob_map(index,halftone),
                                    max(prob_map(index,logo),
                                        prob_map(index,noise)))));
 
-        byte blue = byte(255*(max(prob_map(index,drawing),
+        narray_byte blue = narray_byte(255*(max(prob_map(index,drawing),
                                   max(prob_map(index,math),
                                       prob_map(index,ruling)))));
 
@@ -237,7 +237,7 @@ namespace ocropus {
                                                       bytearray &in){
         // get a binary image
         bytearray in_binary;
-        if(!contains_only(in,byte(0),byte(255))){
+        if(!contains_only(in,narray_byte(0),narray_byte(255))){
             autodel<IBinarize> binarize(make_BinarizeByOtsu());
             makelike(in_binary,in);
             binarize->binarize(in_binary,in);
@@ -274,7 +274,7 @@ namespace ocropus {
 
         // get a binary image
         bytearray in_binary;
-        if(!contains_only(in,byte(0),byte(255))){
+        if(!contains_only(in,narray_byte(0),narray_byte(255))){
             autodel<IBinarize> binarize(make_BinarizeByOtsu());
             makelike(in_binary,in);
             binarize->binarize(in_binary,in);

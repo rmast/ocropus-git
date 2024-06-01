@@ -608,7 +608,7 @@ namespace ocropus {
     }
 
     void ZoneFeatures::extractFeatures(floatarray &feature, bytearray &image){
-        if(!contains_only(image, byte(0), byte(255))){
+        if(!contains_only(image, narray_byte(0), narray_byte(255))){
             fprintf(stderr,"Binary image expected! ");
             fprintf(stderr,"skipping feature extraction...\n");
             return ;

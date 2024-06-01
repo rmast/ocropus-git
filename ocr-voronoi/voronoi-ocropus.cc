@@ -140,7 +140,7 @@ namespace ocropus {
 
     void SegmentPageByVORONOI::segment(intarray &out_image,bytearray &in_image){
 
-        if(!contains_only(in_image,byte(0),byte(255))){
+        if(!contains_only(in_image,narray_byte(0),narray_byte(255))){
             fprintf(stderr,"Voronoi algorithm needs binary input image.\n");
             exit(1);
         }

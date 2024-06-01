@@ -32,11 +32,11 @@ namespace ocropus {
     void paint_box(intarray &image, rectangle r,
                    int color, bool inverted=false);
     void paint_box(bytearray &image, rectangle r,
-                   byte color, bool inverted=false);
+                   narray_byte color, bool inverted=false);
     void paint_box_border(intarray &image, rectangle r,
                           int color, bool inverted=false);
     void paint_box_border(bytearray &image, rectangle r,
-                          byte color, bool inverted=false);
+                          narray_byte color, bool inverted=false);
 
     // Draw an array of rectangle boundaries into a new image
     void draw_rects(intarray &out, bytearray &in,
