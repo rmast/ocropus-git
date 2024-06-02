@@ -237,7 +237,7 @@ namespace ocropus {
                         if(extract_grow<0) {
                             regions.extract(line_image,page_gray,lineno,1);
                         } else {
-                            regions.extract_masked(line_image,page_gray,lineno,(byte)grow,255,1);
+                            regions.extract_masked(line_image,page_gray,lineno,(colib::byte)grow,255,1);
                         }
                         CHECK_ARG(line_image.dim(1)<maxheight);
                         CHECK_ARG(line_image.dim(1)*1.0/line_image.dim(0)<maxaspect);

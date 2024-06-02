@@ -311,7 +311,7 @@ namespace ocropus {
 
         // Overloaded convenience functions.
 
-        void extract(bytearray &out,bytearray &source,byte dflt,int index,int grow=0) {
+        void extract(bytearray &out,bytearray &source,colib::byte dflt,int index,int grow=0) {
             extractWithBackground(out,source,dflt,index,grow);
         }
         void extract(floatarray &out,floatarray &source,float dflt,int index,int grow=0) {
@@ -367,7 +367,7 @@ namespace ocropus {
         void extractSliced(bytearray &out,bytearray &mask,bytearray &source,int index,int grow=0) {
             extractSlicedMasked(out,mask,source,index,grow);
         }
-        void extractSliced(bytearray &out,bytearray &source,byte dflt,int index,int grow=0) {
+        void extractSliced(bytearray &out,bytearray &source,colib::byte dflt,int index,int grow=0) {
             extractSlicedWithBackground(out,source,dflt,index,grow);
         }
         void extractSliced(floatarray &out,bytearray &mask,floatarray &source,int index,int grow=0) {

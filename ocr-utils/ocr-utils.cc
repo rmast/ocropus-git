@@ -147,7 +147,7 @@ namespace ocropus {
         }
     }
 
-    void paint_box(bytearray &image, rectangle r, byte color, bool inverted){
+    void paint_box(bytearray &image, rectangle r, colib::byte color, bool inverted){
 
         int width  = image.dim(0);
         int height = image.dim(1);
@@ -195,7 +195,7 @@ namespace ocropus {
         }
     }
 
-    void paint_box_border(bytearray &image, rectangle r, byte color, bool inverted){
+    void paint_box_border(bytearray &image, rectangle r, colib::byte color, bool inverted){
 
         int width  = image.dim(0);
         int height = image.dim(1);
@@ -495,7 +495,7 @@ namespace ocropus {
             if(!image[i])
                 bimage[i] = 0;
     }
-    template void remove_small_components<byte>(narray<byte> &,int,int);
+    template void remove_small_components<colib::byte>(narray<colib::byte> &,int,int);
     template void remove_small_components<int>(narray<int> &,int,int);
 
     template <class T>
@@ -523,7 +523,7 @@ namespace ocropus {
             }
         }
     }
-    template void remove_marginal_components<byte>(narray<byte> &,int,int,int,int);
+    template void remove_marginal_components<colib::byte>(narray<colib::byte> &,int,int,int,int);
     template void remove_marginal_components<int>(narray<int> &,int,int,int,int);
 
     void remove_neighbour_line_components(bytearray &line) {
@@ -719,7 +719,7 @@ namespace ocropus {
             for (int y=0;y<in.dim(1);y++)
                 out(y,in.dim(0)-x-1) = in(x,y);
     }
-    template void rotate_90<byte>(narray<byte> &,narray<byte> &);
+    template void rotate_90<colib::byte>(narray<colib::byte> &,narray<colib::byte> &);
     template void rotate_90<int>(narray<int> &,narray<int> &);
     template void rotate_90<float>(narray<float> &,narray<float> &);
 
@@ -732,7 +732,7 @@ namespace ocropus {
                 out(in.dim(1)-y-1,x) = in(x,y);
         }
     }
-    template void rotate_270<byte>(narray<byte> &,narray<byte> &);
+    template void rotate_270<colib::byte>(narray<colib::byte> &,narray<colib::byte> &);
     template void rotate_270<int>(narray<int> &,narray<int> &);
     template void rotate_270<float>(narray<float> &,narray<float> &);
 
@@ -744,7 +744,7 @@ namespace ocropus {
                 out(in.dim(0)-x-1,in.dim(1)-y-1) = in(x,y);
         }
     }
-    template void rotate_180<byte>(narray<byte> &,narray<byte> &);
+    template void rotate_180<colib::byte>(narray<colib::byte> &,narray<colib::byte> &);
     template void rotate_180<int>(narray<int> &,narray<int> &);
     template void rotate_180<float>(narray<float> &,narray<float> &);
 
@@ -940,7 +940,7 @@ namespace ocropus {
             throw "bad rank";
         }
     }
-    template void copy_rect<byte>(narray<byte> &,int,int,narray<byte> &,int,int,int,int);
+    template void copy_rect<colib::byte>(narray<colib::byte> &,int,int,narray<colib::byte> &,int,int,int,int);
     template void copy_rect<int>(narray<int> &,int,int,narray<int> &,int,int,int,int);
     template void copy_rect<float>(narray<float> &,int,int,narray<float> &,int,int,int,int);
 

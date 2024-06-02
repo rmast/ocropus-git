@@ -258,7 +258,7 @@ namespace ocropus {
     }
 
     void PageFrameRAST::cleanup(bytearray &out,bytearray &in){
-        if(!contains_only(in,byte(0),byte(255))){
+        if(!contains_only(in,colib::byte(0),colib::byte(255))){
             fprintf(stderr,"Error: Page frame detection ");
             fprintf(stderr,"needs binary image as input.\n");
 			return;
