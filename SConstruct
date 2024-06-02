@@ -59,7 +59,7 @@ headers = glob("*/*.h")
 ################################################################
 
 opts = Variables('custom.py')
-opts.Add('opt', 'Compiler flags for optimization/debugging', "-O2")
+opts.Add('opt', 'Compiler flags for optimization/debugging', "-O0 -g")
 opts.Add('warn', 'Compiler flags for warnings',
          "-Wall -Wno-sign-compare -Wno-write-strings -Wno-unknown-pragmas "+
          " -D__warn_unused_result__=__far__"+
@@ -91,7 +91,7 @@ env = Environment(options=opts)
 env.Append(CXXFLAGS=["-DDATADIR='\""+datadir+"\"'"])
 env.Append(CXXFLAGS=["-DDEFAULT_DATA_DIR='\""+datadir+"/models"+"\"'"])
 env.Append(CXXFLAGS=["-DDEFAULT_EXT_DIR='\""+datadir+"/extensions"+"\"'"])
-env.Append(CXXFLAGS=["-g","-fPIC"])
+env.Append(CXXFLAGS=["-g","-fPIC","-O0"])
 env.Append(CXXFLAGS=env["opt"])
 env.Append(CXXFLAGS=env["warn"])
 conf = Configure(env)
